@@ -14,14 +14,26 @@ Competitors:
     - https://pythontutor.com/visualize.html
     - https://github.com/pathrise-eng/pathrise-python-tutor
 
-Data structures:
-linked list
-binary search trees
-heaps
-Stacks
-Queues
-hash tables
-graphs
+Data structures(CS2515):
+- Lists
+- Stacks
+- Queues
+- Linked Lists
+- Queues Doubly Linked Lists
+- List ADT
+- Trees
+- Binary Search Trees
+- Binary Tree ADT
+- Balanced Binary Trees
+- Set ADT
+- Priority Queue ADT
+- Binary HEAP
+- MAP ADT
+- Hash Tables
+Data structures(CS2516):
+- Graph ADT
+- Adaptable Priority Queues
+
 
 Draw:
 - lolviz: https://github.com/parrt/lolviz
