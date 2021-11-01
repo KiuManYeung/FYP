@@ -1,0 +1,29 @@
+Meeting notes:
+- Decides data structures
+    - Previous lectures notes
+- Find python packages that draws graphs
+    - Redraw
+    - Animated
+- Step by step visualizer
+
+
+
+Competitors:
+- Python Tutor developed by Philip Guo
+    - https://cscircles.cemc.uwaterloo.ca/visualize
+    - https://pythontutor.com/visualize.html
+    - https://github.com/pathrise-eng/pathrise-python-tutor
+
+Data structures:
+linked list
+binary search trees
+heaps
+Stacks
+Queues
+hash tables
+graphs
+
+Draw:
+- lolviz: https://github.com/parrt/lolviz
+- pycallgraph2: https://github.com/daneads/pycallgraph2
+- Unity just like Python Tutor?
