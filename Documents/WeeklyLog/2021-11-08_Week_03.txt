@@ -1,0 +1,10 @@
+Meeting notes:
+- Test lolviz
+- Test pycallgraph2
+
+
+
+lolviz:
+- Depends on graphviz
+- Popup multiple pdf
+- For the same graph only show the last updates
