@@ -1,0 +1,41 @@
+Meeting notes:
+- Meeting cancelled
+
+
+
+
+
+Ideas:
+- Look at common mistakes to test the graphing
+- List test cases
+- How to handle code that doesn't run
+
+
+
+
+
+Graphing tool:
+
+graphviz:
+- Output pdf, svg...
+
+lolviz:
+- Depends on graphviz
+- Popup multiple pdf
+- For the same graph only show the last update
+- lolviz.js Javascript interpretation of lolviz
+
+pycallgraph2:
+- Depends on graphviz
+- Generates png graphs
+- Used for generating call graphs
+
+PyGraphviz
+
+
+
+
+
+GUI:
+- tkinter
+- Jupyter notebook
