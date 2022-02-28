@@ -1,0 +1,72 @@
+Meeting notes:
+- AST line number??
+- I lost memory of the meeting
+
+
+
+
+
+Ideas:
+- AST
+    - Figure how to use AST
+    - Insert different kinds of statement in AST
+    - Insert statement after every line in AST
+    - Execute altered AST
+    - Get line number
+- lolviz
+    - Generate graphs as examples
+
+
+
+
+
+
+Data structures(CS2515):
+*- Lists
+*- Stacks
+- Queues
+- Linked Lists
+- Queues Doubly Linked Lists
+- List ADT
+- Trees
+- Binary Search Trees
+- Binary Tree ADT
+- Balanced Binary Trees
+- Set ADT
+- Priority Queue ADT
+- Binary HEAP
+- MAP ADT
+- Hash Tables
+Data structures(CS2516):
+- Graph ADT
+- Adaptable Priority Queues
+
+
+
+
+
+Graphing tool:
+
+graphviz:
+- Output pdf, svg...
+- tk for tkinter
+- gkt for GKT
+
+lolviz:
+- Depends on graphviz
+- Solved: Output to svg no problem
+    - graph.format = 'svg'
+- Solved: For the same execution only show the last object
+    - Creating a new object or new graph doesn't work
+    - Solved by saving to different filename
+    - graph.filename = 'filename'
+    - Solved by rendering to a different temp file for each invocation
+- Jupyter notebook can display graphviz.files.Source
+
+
+
+
+
+GUI:
+- tkinter
+- GKT
