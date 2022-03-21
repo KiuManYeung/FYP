@@ -97,3 +97,11 @@ class BSTNode:
         if self.val is not None:
             vals.append(self.val)
         return vals
+
+
+insert = [5,7,3,1,2,4,8]
+delete = [3,1,5,7,2]
+
+bst = BSTNode()
+for i in insert:
+    bst.insert(i)

@@ -2,6 +2,8 @@ import ast
 import tkinter as tk
 import shutil
 import os
+import traceback
+
 
 
 
@@ -10,7 +12,7 @@ class Application(tk.Frame):
         tk.Frame.__init__(self, master, *args, **kwargs)
         self.img_path = os.path.join(os.path.curdir, "png")
         self.index = 0
-        self.onlypngs = []
+        self.graphs = []
         self.namespace = {}
         self.status_variable = tk.StringVar()
         self.status_variable.set("Status: Ready")
@@ -19,21 +21,28 @@ class Application(tk.Frame):
     def run(self):
         self.status_variable.set("Status: Executing")
         self.lbl_status.update()
+
         self.index = 0
         self.namespace = {}
         if os.path.isdir(self.img_path):
             shutil.rmtree(self.img_path)
         os.mkdir(self.img_path)
+        
         text = self.txt_edit.get(1.0, tk.END)
-        if text:
-            src = Handler(text)
-            src.insert_imports(src.original)
-            src.insert_graphs(src.original)
-            src.insert_global(src.original)
-            exec(compile(src.original, filename="<src>", mode="exec"), self.namespace)
-        self.onlypngs = [f for f in os.listdir(self.img_path) if f.endswith(".png")]
-        if self.onlypngs:
-            filename = os.path.join(self.img_path, self.onlypngs[0])
+        src = Handler(text)
+        if src.error_msg:
+            self.lbl_right.configure(image='')
+            self.lbl_right.configure(text=src.error_msg)
+        else:
+            try:
+                exec(compile(src.processed, filename="<src>", mode="exec"), self.namespace)
+            except Exception as e:
+                self.lbl_right.configure(image='')
+                self.lbl_right.configure(text=traceback.format_exc())
+
+        self.graphs = [f for f in os.listdir(self.img_path) if f.endswith(".png")]
+        if self.graphs:
+            filename = os.path.join(self.img_path, self.graphs[0])
             img = tk.PhotoImage(file=filename)
             self.lbl_right.configure(image=img)
             self.lbl_right.image=img
@@ -42,9 +51,9 @@ class Application(tk.Frame):
         self.status_variable.set("Status: Ready")
 
     def next_img(self):
-        if self.index < len(self.onlypngs)-1:
+        if self.index < len(self.graphs)-1:
             self.index += 1
-            filename = os.path.join(self.img_path, self.onlypngs[self.index])
+            filename = os.path.join(self.img_path, self.graphs[self.index])
             img = tk.PhotoImage(file=filename)
             self.lbl_right.configure(image=img)
             self.lbl_right.image=img
@@ -52,7 +61,7 @@ class Application(tk.Frame):
     def previous_img(self):
         if self.index > 0:
             self.index -= 1
-            filename = os.path.join(self.img_path, self.onlypngs[self.index])
+            filename = os.path.join(self.img_path, self.graphs[self.index])
             img = tk.PhotoImage(file=filename)
             self.lbl_right.configure(image=img)
             self.lbl_right.image=img
@@ -94,16 +103,26 @@ class Application(tk.Frame):
         self.btn_previous.grid(row=1, column=0, sticky="nsew", padx=5, pady=5)
         self.btn_next.grid(row=1, column=1, sticky="nsew", padx=5, pady=5)
 
-        self.lbl_right = tk.Label(self.frm_right)
+        self.lbl_right = tk.Label(self.frm_right, justify="left")
         self.lbl_right.grid(row=0, column=0, columnspan=2)
 
 
 
 class Handler:
     def __init__(self, original):
-        self.original = ast.parse(original)
 
-        self.imports = ast.parse('''from lolviz import *''')
+        self.error_msg = ""
+        try:
+            self.original = ast.parse(original)
+        except Exception as e:
+            # Probably only catches syntax errors
+            self.error_msg = traceback.format_exc()
+            self.original = ast.parse("")
+
+        self.imports = ast.parse('''
+from lolviz import *
+import os
+''')
         self.clean_lineno(self.imports, -1)
 
         self.vars = "','".join(list({node.id for node in ast.walk(self.original) if isinstance(node, ast.Name)}))
@@ -116,8 +135,13 @@ global graph_lines''')
 mySpecialGraph = callsviz(varnames=[''' + "'" + self.vars + "'" + '''])
 mySpecialGraph.format = 'png'
 png_counter += 1
-mySpecialGraph.render("png/"+str(png_counter).zfill(4))
+mySpecialGraph.render(os.path.join(os.path.curdir, "png", str(png_counter).zfill(4)))
 ''')
+        self.processed = self.original
+
+        self.insert_imports(self.processed)
+        self.insert_graphs(self.processed)
+        self.insert_global(self.processed)
 
     def lineno_builder(self, line_numbers):
         insert = ast.parse('''print("Executing line: '''+ str(line_numbers) +'''")''')
@@ -148,8 +172,8 @@ mySpecialGraph.render("png/"+str(png_counter).zfill(4))
                     temp = temp + self.graphs.body
                 else:
                     temp.append(element)
-            if isinstance(node, ast.Module):
-                temp = temp[:-3]
+            # if isinstance(node, ast.Module):
+            #     temp = temp[:-4]
             node.body = temp
 
     def insert_imports(self, node):
