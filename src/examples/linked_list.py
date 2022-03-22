@@ -56,3 +56,14 @@ class SLinkedList:
 
     def length(self):
         return self.size
+
+ll = SLinkedList()
+ll.add_first('a')
+ll.add_first('b')
+ll.add_first('c')
+ll.add_last('1')
+ll.add_last('2')
+ll.add_last('3')
+ll.remove_first()
+ll.remove_last()
+

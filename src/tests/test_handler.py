@@ -2,16 +2,18 @@ import ast
 import os
 import shutil
 import traceback
+from astpretty import pformat
 
 class Handler:
     def __init__(self, original):
+
+        self.error_msg = ""
         try:
             self.original = ast.parse(original)
         except Exception as e:
-            # print(e)
-            msg = traceback.format_exc()
+            # Probably only catches syntax errors
+            self.error_msg = traceback.format_exc()
             self.original = ast.parse("")
-        
 
         self.imports = ast.parse('''
 from lolviz import *
@@ -21,7 +23,7 @@ import os
 
         self.vars = "','".join(list({node.id for node in ast.walk(self.original) if isinstance(node, ast.Name)}))
         
-        self.global_count = ast.parse('''
+        self.globals = ast.parse('''
 global png_counter
 global graph_lines''')
 
@@ -33,9 +35,13 @@ mySpecialGraph.render(os.path.join(os.path.curdir, "png", str(png_counter).zfill
 ''')
         self.processed = self.original
 
-        self.insert_imports(self.processed)
+        self.do_global = (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)
+        self.do_not_follow = (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef, ast.Return, ast.For, ast.AsyncFor, ast.While, ast.With, ast.AsyncWith, ast.Try, ast.Import, ast.ImportFrom, ast.Global, ast.Nonlocal, ast.Pass, ast.Break, ast.Continue)
+
+        
         self.insert_graphs(self.processed)
         self.insert_global(self.processed)
+        self.insert_imports(self.processed)
 
     def lineno_builder(self, line_numbers):
         insert = ast.parse('''print("Executing line: '''+ str(line_numbers) +'''")''')
@@ -50,24 +56,39 @@ mySpecialGraph.render(os.path.join(os.path.curdir, "png", str(png_counter).zfill
 
     def insert_graphs(self, node):
         if hasattr(node, 'body'):
+            if isinstance(node, ast.Try):
+                for element in node.orelse:
+                    self.insert_graphs(element)  
+                temp = []
+                for element in node.orelse:
+                    temp.append(element)
+                    if not isinstance(element, self.do_not_follow):
+                        self.clean_lineno(self.graphs, element.lineno)
+                        temp = temp + self.graphs.body
+                node.orelse = temp
+
+                for element in node.finalbody:
+                    self.insert_graphs(element)  
+                temp = []
+                for element in node.finalbody:
+                    temp.append(element)
+                    if not isinstance(element, self.do_not_follow):
+                        self.clean_lineno(self.graphs, element.lineno)
+                        temp = temp + self.graphs.body
+                node.finalbody = temp
+
             for element in node.body:
                 self.insert_graphs(element)
             temp = []
-            if isinstance(node, ast.FunctionDef) :
-                temp = temp + self.global_count.body
+            if isinstance(node, self.do_global) :
+                temp = temp + self.globals.body
             for element in node.body:
-                # if not isinstance(node, (ast.Import, ast.ImportFrom, ast.ClassDef)):
-                    # temp = temp + self.lineno_builder(element.lineno).body
-                # temp.append(element)
-                if not isinstance(element, (ast.Import, ast.ImportFrom, ast.ClassDef, ast.FunctionDef, ast.Return)):
-                    # temp = temp + self.lineno_builder(element.lineno).body
-                    temp.append(element)
+                temp.append(element)
+                if not isinstance(element, self.do_not_follow):
                     self.clean_lineno(self.graphs, element.lineno)
                     temp = temp + self.graphs.body
-                else:
-                    temp.append(element)
-            if isinstance(node, ast.Module):
-                temp = temp[:-3]
+            # if isinstance(node, ast.Module):
+            #     temp = temp[:-4]
             node.body = temp
 
     def insert_imports(self, node):
@@ -90,10 +111,13 @@ with open("bstree.py", 'r') as source:
 
 
 
-img_path = os.path.join(os.path.curdir, "png")
-if os.path.isdir(img_path):
-    shutil.rmtree(img_path)
-os.mkdir(img_path)
+# img_path = os.path.join(os.path.curdir, "png")
+# if os.path.isdir(img_path):
+#     shutil.rmtree(img_path)
+# os.mkdir(img_path)
 namespace = {}
 src = Handler(text)
-exec(compile(src.processed, filename="<src>", mode="exec"), namespace)
+with open("out.py", 'w') as out:
+    out.write(ast.unparse(src.processed))
+    # out.write(pformat(src.original, show_offsets=False))
+# exec(compile(src.processed, filename="<src>", mode="exec"), namespace)
