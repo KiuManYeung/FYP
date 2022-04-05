@@ -51,7 +51,6 @@ class Application(tk.Frame):
                 exec(compile(src.processed, filename="<src>", mode="exec"), self.namespace)
                 self.graphs = [f for f in os.listdir(self.img_path) if f.endswith(".png")]
                 self.execution_sequence = self.namespace['execution_sequence']
-                print(self.execution_sequence)
                 self.next()
             except Exception as e:
                 self.lbl_right.configure(image='')
