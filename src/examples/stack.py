@@ -17,3 +17,11 @@ class Stack:
 
     def length(self):
         return len(self.alist)
+
+insert = [5,7,3,1,2,4,8]
+
+bst = Stack()
+for i in insert:
+    bst.push(i)
+for i in range(len(insert)):
+    bst.pop()

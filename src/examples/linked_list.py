@@ -9,8 +9,8 @@ class SLinkedList:
         self.size = 0
 
     def add_first(self, element):
-        node = SLLNode(element, self.first)
-        self.first = node
+        newnode = SLLNode(element, self.first)
+        self.first = newnode
         self.size = self.size + 1
 
     def get_first(self):
@@ -31,27 +31,27 @@ class SLinkedList:
         if self.first == None:
             self.first = newnode
         else:
-            node = self.first
-            while node.next:
-                node = node.next
-            node.next = newnode
+            n = self.first
+            while n.next:
+                n = n.next
+            n.next = newnode
             self.size = self.size + 1
 
     def get_last(self):
         if self.size == 0:
             return None
-        node = self.first
-        while node.next:
-            node = node.next
-        return node.element
+        n = self.first
+        while n.next:
+            n = n.next
+        return n.element
 
     def remove_last(self):
         if self.size == 0:
             return None
-        node = self.first
-        while node.next.next:
-            node = node.next
-        node.next = None
+        n = self.first
+        while n.next.next:
+            n = n.next
+        n.next = None
         self.size = self.size - 1
 
     def length(self):

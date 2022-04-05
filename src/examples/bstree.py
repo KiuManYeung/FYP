@@ -105,3 +105,5 @@ delete = [3,1,5,7,2]
 bst = BSTNode()
 for i in insert:
     bst.insert(i)
+for i in delete:
+    bst.delete(i)
