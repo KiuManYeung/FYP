@@ -1,0 +1,32 @@
+Meeting:
+- Goes in to the UI, goes out from the UI
+- Line number thing
+
+Ideas:
+- exec is in the same process
+- the rest of the program can get the variables in the exec when namespace is retreived
+- Syntax Error handling
+- Runtime Error handling
+- Path handling
+- Text copy and paste
+- Redo and Undo
+- Cross platform check
+- Key Bindings
+- AST check
+- Scroll bar
+- line highlight
+- line see
+
+Constraint:
+    !!! do not use if main
+    !!! do not use mySpecialGraph
+    !!! do not use png_counter
+    !!! do not use execution_sequence
+    !!! do not run forever
+    !!! do not write to file
+    up to 100 step
+    Install Graphviz
+    Install lolviz
+    Print goes to the terminal
+    ??? do not use node
+    ??? Does not perform correctly in recursive calls

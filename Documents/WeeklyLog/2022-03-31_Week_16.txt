@@ -1,0 +1,7 @@
+Meeting:
+- Focus open day
+
+Ideas:
+- Python tutor does not take long code > 5?? characters
+- recutsion problem solved, not a recursion problem
+- bug fix

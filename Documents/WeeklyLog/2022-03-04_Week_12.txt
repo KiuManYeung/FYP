@@ -1,0 +1,14 @@
+meeting:
+use ast
+take code
+augment code using ast 
+when code run 
+have rease indicate trace, example line number, loop include
+possibly stop at each step
+
+
+
+
+
+
+what i did:

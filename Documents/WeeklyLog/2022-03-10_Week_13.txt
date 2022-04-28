@@ -1,0 +1,13 @@
+meeting:
+- AST weel!
+
+
+
+
+
+Ideas:
+- Insert graphing at the right place
+Problem:
+- Does not graph every line, only report lines the graphed?
+- Line report has to be returned from execution, as list?
+- How to get lines in a process?
