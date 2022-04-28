@@ -15,13 +15,13 @@ class Application(tk.Frame):
         self.winfo_toplevel().bind('<Control-Left>', self.previous)
         self.winfo_toplevel().bind('<Control-Right>', self.next)
 
-        self.img_path = os.path.join(os.path.curdir, "png")
-        self.index_img = -1
-        self.index_line = -1
-        self.graphs = []
-        self.namespace = {}
-        self.execution_sequence = []
-        self.status_variable = tk.StringVar()
+        self.img_path = os.path.join(os.path.curdir, "png") # the path to the image folder
+        self.index_img = -1                                 # the index of current graph in graphs
+        self.index_line = -1                                # the index of current line in execution_sequence
+        self.graphs = []                                    # the list of graphs in the image folder
+        self.namespace = {}                                 # the dictionary for the variables in the executed altered code
+        self.execution_sequence = []                        # a list for the order of execution
+        self.status_variable = tk.StringVar()               # a StringVar that represents the state
         self.status_variable.set("Status: Ready")
         self.setup_widgets()
 
@@ -86,6 +86,7 @@ class Application(tk.Frame):
                     img = tk.PhotoImage(file=filename)
                     self.lbl_right.configure(image=img)
                     self.lbl_right.image=img
+                    
     def edit(self):
         self.unfreeze()
         self.remove_highlight()
@@ -192,8 +193,8 @@ mySpecialGraph.render(os.path.join(os.path.curdir, "png", str(png_counter).zfill
         self.insert_global(self.processed)
         self.insert_imports(self.processed)
 
-    def lineno_builder(self, line_numbers, graph):
-        insert = ast.parse('''execution_sequence.append(('''+ str(line_numbers) +''','''+ str(graph) +'''))''')
+    def lineno_builder(self, lineno, graph):
+        insert = ast.parse('''execution_sequence.append(('''+ str(lineno) +''','''+ str(graph) +'''))''')
         return insert
         
     def clean_lineno(self, node, lineno):
