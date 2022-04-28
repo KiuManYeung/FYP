@@ -1,0 +1,3104 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{indentfirst}
+\usepackage[nodayofweek,level]{datetime}
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH] \THEYEAR}
+\usepackage{enumitem}
+\setlist{nolistsep}
+\usepackage{hyperref}
+\usepackage{url}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language british
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "md-charter" "Arial"
+\font_sans "helvet" "default"
+\font_typewriter "courier" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style british
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\listings_params "basicstyle={\ttfamily}"
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Animation Environment for Linked Data Structures
+\end_layout
+
+\begin_layout Author
+Kiu Man Yeung
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vfill
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+Final-Year Project- BSc Computer Science
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Supervisor: Dr Kieran Herley
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vfill
+\end_layout
+
+\begin_layout Plain Layout
+
+Department of Computer Science
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+University College Cork
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vfill
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+monthyeardate
+\backslash
+today
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vfill
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Abstract
+\end_layout
+
+\begin_layout Standard
+The basis of this project is to create a data structures visualisation tool
+ for educational purpose, which students can inspect their code in execution
+ to achieve better learning result.
+ The main goal of the project is to create a visualiser that shows step-by-step
+ linked data structure manipulations in Python.
+ The visualiser provides a graphical interface that allows users to input
+ their implementation and display the result as stepped animation of the
+ execution beside.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Declaration of Originality
+\end_layout
+
+\begin_layout Standard
+In signing this declaration, you are conforming, in writing, that the submitted
+ work is entirely your own original work, except where clearly attributed
+ otherwise, and that it has not been submitted partly or wholly for any
+ other educational award.
+ I hereby declare that:
+\end_layout
+
+\begin_layout Itemize
+this is all my own work, unless clearly indicated otherwise, with full and
+ proper accreditation;
+\end_layout
+
+\begin_layout Itemize
+with respect to my own work: none of it has been submitted at any educational
+ institution contributing in any way to an educational award;
+\end_layout
+
+\begin_layout Itemize
+with respect to another’s work: all text, diagrams, code, or ideas, whether
+ verbatim, paraphrased or otherwise modified or adapted, have been duly
+ attributed to the source in a scholarly manner, whether from books, papers,
+ lecture notes or any other student’s work, whether published or unpublished,
+ electronically or in print.
+\end_layout
+
+\begin_layout Standard
+Signed: Kiu Man Yeung
+\begin_inset Newline newline
+\end_inset
+
+Date: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Acknowledgements
+\end_layout
+
+\begin_layout Standard
+I would like to express my sincere gratitude and appreciation to my supervisor
+ Dr Kieran Herley for his time, patience, advice, and guidance throughout
+ the project.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Subsection
+Motivation
+\end_layout
+
+\begin_layout Standard
+Data structures and algorithms is a must-learn topic in a Computer Science
+ or Software Engineering education.
+ The main focus of learning data structures and algorithms is correctness
+ and efficiently.
+ Being able to organise data in an appropriate structure enhances the algorithms
+’ efficiency and showcases one’s ability in problem solving.
+ 
+\end_layout
+
+\begin_layout Standard
+Many students struggle with understanding, choosing, or implementing data
+ structures.
+ Students learning data structures and algorithms after introductory level
+ courses.
+ Data structures and memory management concepts is quite a foreign idea
+ to beginning programmers.
+ Students may not understand how pointers in a data linking mechanism works.
+ They may already have experience with canned data structures without know
+ what is inside the black box.
+ 
+\end_layout
+
+\begin_layout Standard
+Instead of just reading the textbooks, drawing of data structures is much
+ more effective to visual learners.
+ Students can see how data structures are constructed and linked.
+ Graphing every step in the execution allows them to understand how the
+ operation has affected the data structure.
+\end_layout
+
+\begin_layout Standard
+However, the drawings may not be the correct representations of the data
+ structures in execution.
+ It is rather an expectation projection.
+ The graphs and the implementation are not technically connected and therefore
+ may not reflect problems in broken data structures and algorithms.
+ This project aims to help students better understand the topic by visualising
+ the structures they have created.
+ 
+\end_layout
+
+\begin_layout Subsection
+Goal
+\end_layout
+
+\begin_layout Standard
+This project aims to build a visualiser that bridges the gap between the
+ source algorithm and the graphical visualization.
+ The tool is specialised to visualise linked data structures nicely and
+ present the effect of the algorithm in an intuitive animated environment.
+\end_layout
+
+\begin_layout Section
+Analysis
+\end_layout
+
+\begin_layout Subsection
+Objective
+\end_layout
+
+\begin_layout Standard
+The visualisation tool targets students who are studying data structures
+ and algorithms.
+ It is developed as a teaching aid hoping to assist students master the
+ topic and enhance their ability in problem solving.
+\end_layout
+
+\begin_layout Standard
+The visualiser allows entering and editing Python source code.
+ It generates a graph for every step once the source code is executed.
+ The graph presents the call stack 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "noauthor_call_2022"
+literal "true"
+
+\end_inset
+
+ which shows all objects created by source code currently in the memory.
+ While stepping through the source code, it highlights the current line
+ of execution and display the corresponding instant of call stack.
+\end_layout
+
+\begin_layout Subsection
+Specification
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Specification"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="35text%">
+<column alignment="left" valignment="top" width="60text%">
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Source Language
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Python 3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Length Restriction
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Length of the source input is not limited by the characters count.
+ Instead is limited by the complexity.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Limitation"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Visualisation Capability
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linked data structures Includes, but not limited to:
+\end_layout
+
+\begin_layout Itemize
+Stack
+\end_layout
+
+\begin_layout Itemize
+Queue
+\end_layout
+
+\begin_layout Itemize
+Linked List
+\end_layout
+
+\begin_layout Itemize
+Double Linked List
+\end_layout
+
+\begin_layout Itemize
+Binary Tree
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Platform
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Windows
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Implemented Language
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Python 3.7+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dependencies
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Itemize
+Graphviz
+\end_layout
+
+\begin_layout Itemize
+Lolviz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Specification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+noindent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Features and Requirements
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Features-and-Requirements"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+noindent
+\end_layout
+
+\begin_layout Plain Layout
+
+Must haves:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+User must be able to interact with the tool via graphical user interface.
+\end_layout
+
+\begin_layout Itemize
+User must be able to enter, edit, and execute the source code.
+\end_layout
+
+\begin_layout Itemize
+The tool must be able to display the error message when there is a syntax
+ error or a runtime error.
+\end_layout
+
+\begin_layout Itemize
+The tool must be able to display graphs of all objects created during the
+ execution of source code.
+\end_layout
+
+\begin_layout Itemize
+The tool must be able to display graphs of the call stack in all steps of
+ the execution.
+\end_layout
+
+\begin_layout Itemize
+The tool must provide access to earlier and later steps of execution if
+ available.
+\end_layout
+
+\begin_layout Standard
+Should haves:
+\end_layout
+
+\begin_layout Itemize
+The tool should highlight the current line of the execution.
+\end_layout
+
+\begin_layout Itemize
+The tool should display the current state of call stack in the execution.
+\end_layout
+
+\begin_layout Itemize
+The tool should automatically scroll to and show the current line.
+\end_layout
+
+\begin_layout Itemize
+The tool should display the status of the tool in Ready, Executing, and
+ Complete.
+\end_layout
+
+\begin_layout Itemize
+The tool should have Left and Right key bindings to Previous and Next buttons.
+\end_layout
+
+\begin_layout Itemize
+The tool should freeze the textbox when the user clicks Run and unfreeze
+ it when the user clicks Edit
+\end_layout
+
+\begin_layout Itemize
+The tool should remove any line highlight when the textbox is unfrozen.
+\end_layout
+
+\begin_layout Standard
+Could haves:
+\end_layout
+
+\begin_layout Itemize
+The tool could have display for the current number and the count of steps
+ of the execution.
+\end_layout
+
+\begin_layout Itemize
+The tool could have line number display next to the textbox.
+\end_layout
+
+\begin_layout Itemize
+The tool could have cross-platform support.
+\end_layout
+
+\begin_layout Itemize
+The tool could be packaged as an executable and bundled with its dependences.
+\end_layout
+
+\begin_layout Itemize
+The tool could have syntax highlights in the textbox.
+\end_layout
+
+\begin_layout Standard
+Not haves:
+\end_layout
+
+\begin_layout Itemize
+The tool will not support any language other than Python 3.
+\end_layout
+
+\begin_layout Itemize
+The tool will not be tested on platforms other than Windows.
+\end_layout
+
+\begin_layout Subsection
+User Interface
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:User-Interface"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UI.png
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+User Interface Design
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On the left, there is a textbox allowing users to enter their source code.
+\end_layout
+
+\begin_layout Standard
+To the right of the textbox is a canvas to display graphs and error messages.
+\end_layout
+
+\begin_layout Standard
+The status bar on the bottom reflects what the visualiser is working on,
+ where Ready means it is idle for code editing, Executing means it is working
+ on graph generation and Complete means the generation is complete and the
+ result is displayed on the canvas.
+\end_layout
+
+\begin_layout Standard
+The Run button triggers the graph generation process and freezes the textbox.
+ Once the graphing is completed, if there is a syntax error or runtime error,
+ the error is displayed on the canvas, otherwise the corresponding line
+ of the first step in the execution is highlighted and the initial state
+ of all the objects related to the user's source code.
+\end_layout
+
+\begin_layout Standard
+The Previous and Next buttons travel between steps of the execution when
+ the graphing completes, with the current line highlighted and the canvas
+ showing the current state of call stack.
+\end_layout
+
+\begin_layout Standard
+The Edit button unfreezes the textbox, clears the highlight, and turn the
+ state of the visualiser to Ready waiting for the next execution.
+\end_layout
+
+\begin_layout Subsection
+Existing Work
+\end_layout
+
+\begin_layout Standard
+Python Tutor 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "guo_python_nodate"
+literal "true"
+
+\end_inset
+
+ is a popular online visualiser that is a well-developed and mature tool.
+ This project as well as the Lolviz package was inspired by this service.
+ Python Tutor trustful and stable visualisation tool that supports 5 languages
+ with known limitations.
+ It can only handle up to 5600 bytes of code input and does not display
+ data structures in a friendly arrangement.
+ The project aims to fill in the gaps and offer a different solution that
+ is offline and linked data structures oriented.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename python tutor.png
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Python Tutor Presentation on Binary Search Tree
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Design
+\end_layout
+
+\begin_layout Subsection
+Dependencies
+\end_layout
+
+\begin_layout Standard
+This section discuses software, modules or packages that supports the ability
+ to generate graphs of data structures.
+\end_layout
+
+\begin_layout Subsubsection
+Abstract Syntax Tree
+\end_layout
+
+\begin_layout Standard
+Abstract Syntax Tree 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "python_software_foundation_ast_nodate"
+literal "true"
+
+\end_inset
+
+, AST, is a module comes with the standard installation of Python.
+ It has functions that parse source code into a parse tree called AST that
+ would then allow code alteration and insertion.
+\end_layout
+
+\begin_layout Standard
+Python parse source code into an AST based on Python grammar, which nodes
+ are syntactically linked to remain the structure of the source.
+ A node in the AST typically represents a statement or an expression.
+ These nodes have an attribute that retained the line number for reference.
+ Statement nodes that have other statements in scope, for example Function
+ Definition statements, store the children in a built-in Python list.
+ The AST is essentially composed of nested list.
+ On that account, AST can be easily altered by simple list manipulation.
+\end_layout
+
+\begin_layout Subsubsection
+Graphviz
+\end_layout
+
+\begin_layout Standard
+Graphviz 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "att_research_and_lucent_bell_labs_graphviz_nodate"
+literal "true"
+
+\end_inset
+
+ is an open–source graphing software that is powerful in rendering and manipulat
+ing structural diagrams.
+ It is capable of turning a graph written in DOT language 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "noauthor_dot_2022"
+literal "true"
+
+\end_inset
+
+ into useful formats like SVG, PNG, and PDF.
+ The DOT language describes relations between objects.
+ The graphs, nodes and edges can have attributes that specifies aspects
+ such as colour, shapes, and lines.
+ However, other than ranking objects, it is not specific in the layout.
+ The Graphviz layout engine determines where to place the elements.
+\end_layout
+
+\begin_layout Standard
+The Graphviz Python package 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bank_graphviz_2022"
+literal "true"
+
+\end_inset
+
+ is an API to the Graphviz software.
+ It provides 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+Graph
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+Digraph
+\end_layout
+
+\end_inset
+
+ class in Python that represents undirected graphs and directed graphs in
+ DOT language respectively.
+ The package can generate DOT source code from graph objects.
+ The API provides the functionality to render graph objects into images
+ using Graphviz.
+\end_layout
+
+\begin_layout Subsubsection
+Lolviz
+\end_layout
+
+\begin_layout Standard
+Lolviz 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "parr_parrtlolviz_nodate"
+literal "true"
+
+\end_inset
+
+ is a Python package that utilise the Graphviz Python package.
+ It generates graphs objects from a wide range of objects from built-in
+ Python data types, arbitrary objects created by users, to call stack of
+ the process.
+ It also specifies ranks, shapes, colours, and styles to make Graphviz display
+ objects nicely.
+\end_layout
+
+\begin_layout Subsection
+Parse and Graph Mechanism
+\end_layout
+
+\begin_layout Standard
+The idea is to alter the source so that when it is executed, on top of doing
+ what the code was intended, it also generates a graph for every step and
+ add the corresponding line number to a list where it keeps track of the
+ order of execution.
+\end_layout
+
+\begin_layout Standard
+After taking the source input from the user, it is parsed into a parse tree
+ with the AST module.
+ The added code must also be parsed into AST so that it can be inserted
+ to the source AST correctly.
+ Recursively stepping through the AST to insert statements where necessary.
+ Not all statements benefit from being followed by a graphing statement.
+ While order of execution is needed for every line, graphing statements
+ are desirable only after statements that have effects on the call stack.
+ AST allows performing different alteration according to the type of each
+ statement easily.
+ This will be further discussed in detail in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Parse-and-Insert:"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Using the AST module also allows less error prone alteration to the source.
+ The reason being that a successful AST parsing requires the source to be
+ syntactically error free.
+\end_layout
+
+\begin_layout Standard
+Then the altered AST is executed.
+ The graph statements call the call stack graphing function in Lolviz to
+ generate Graphviz graph objects.
+ The objects are then rendered using Graphviz into PNG.
+ These images will be stored into a folder and later displayed in the visualiser.
+\end_layout
+
+\begin_layout Subsection
+High-Level Architecture Overview
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:High-Level-Architecture-Overview"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename state machine.png
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Event-Driven and State Design
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The visualiser is designed to be an event-driven system where the GUI handles
+ events by binding them to a function.
+ Button click events are labelled italic in Figure 2.
+ The machine can be described in three states: Ready, Executing, and Complete.
+\end_layout
+
+\begin_layout Description
+Ready Ready state is the initial state of the system.
+ In this state, the user can freely edit their source code in the textbox.
+ The system idles until the user clicks the Run button which triggers the
+ machine to transition into the Executing state.
+\end_layout
+
+\begin_layout Description
+Executing Once the system enters the executing state, the system freezes
+ the textbox to avoid incoherence if the text has been modified since execution
+ started.
+ The source code is processed to insert statements as described in Section
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Parse-and-Insert:"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ After the insertion is over, the processed code is then executed.
+ On success, the execution is finished, it should have generated and stored
+ all the call graphs in a folder, as well as returning a list of the execution
+ order.
+ With the list of the order of execution and the list of graphs, the visualiser
+ highlights the first line in the execution order and displays the graph
+ that corresponds to the line.
+ On failure, the error is captured and displayed on the canvas instead of
+ graphs.
+ Either way, the system automatically transitions into the Complete state.
+\end_layout
+
+\begin_layout Description
+Complete The complete state waits for a button click event on either Next,
+ Previous or Edit.
+ The Next and Previous buttons would update the line highlight to the next
+ or previous line in the execution order list respectively and display the
+ corresponding graph.
+ Both Next and Previous button events end with returning back to waiting.
+ The only way to exit Complete state is the Edit button.
+ It unfreezes the textbox, remove any line highlight and take the machine
+ back to the Ready state.
+\end_layout
+
+\begin_layout Subsection
+Alternatives
+\end_layout
+
+\begin_layout Standard
+The method explained in this Section is easy to implement.
+ While it is tolerable, the amount of file saving to the secondary storage
+ slows down the performance and there is a risk of other processes locking
+ the file writing.
+ There are also many other ways to accomplish the same task, but each of
+ them comes with different pros and cons.
+\end_layout
+
+\begin_layout Standard
+One way is to generate graphs on previous and next button click events.
+ The executing altered algorithm stop at a certain number of steps, then
+ a snapshot of the call graph is taken and displayed.
+ It can energy squandering to recreate if the user going back and forth,
+ which is quite a common learn pattern.
+\end_layout
+
+\begin_layout Section
+Implementation
+\end_layout
+
+\begin_layout Subsection
+UML
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename uml.png
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Class-Diagram"
+
+\end_inset
+
+Class Diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The structure of the software shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Class-Diagram"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is fairly simple.
+ It includes two class: Application and Handler.
+ Application class is responsible for event handling in the graphical user
+ interface (GUI).
+ Handler class handles everything about code alteration.
+ The Main is solely for initiating an 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+Application
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Graphical User Interface: Application
+\end_layout
+
+\begin_layout Standard
+The GUI framework of choice for the visualiser is Tkinter 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "python_software_foundation_tkinter_nodate"
+literal "true"
+
+\end_inset
+
+.
+ The creation of 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+Application
+\end_layout
+
+\end_inset
+
+ initialises all class variables, set up key bindings and calls 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+setup_widgets()
+\end_layout
+
+\end_inset
+
+ which creates and places all the widgets in the GUI according to Section
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:User-Interface"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+run()
+\end_layout
+
+\end_inset
+
+ function is responsible all tasks during the Executing state described
+ in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:High-Level-Architecture-Overview"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Whenever it catches an exception, it displays the error message and transition
+ to Complete state.
+ It first reset the variables and remove any file in the image directory.
+ Then it creates a 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+Handler
+\end_layout
+
+\end_inset
+
+ and pass in the source code from the textbox.
+ The 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+Handler
+\end_layout
+
+\end_inset
+
+ will process the source code as described in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Parse-and-Insert:"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ If the error message in 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+Handler
+\end_layout
+
+\end_inset
+
+ is set, it is a syntax error raised by AST parsing.
+ Otherwise, the 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+Handler
+\end_layout
+
+\end_inset
+
+ would have prepared the altered AST.
+ Try execute the altered AST and catch any runtime error will be thrown
+ during the execution.
+ On success read all the PNG filenames in the in the image directory into
+ the list.
+ An empty dictionary that was passed into the 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+exec()
+\end_layout
+
+\end_inset
+
+ now stores the end state of variables from the execution.
+ The list of execution order, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+execution_sequence
+\end_layout
+
+\end_inset
+
+, is then retrieved from the dictionary.
+ The elements of the 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+execution_sequence
+\end_layout
+
+\end_inset
+
+ are tuples, where the first element is a line number and the second element
+ indicates if there is an graph associated with the line.
+ Finally, the 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+run()
+\end_layout
+
+\end_inset
+
+ function highlights the first line from the 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+execution_sequence
+\end_layout
+
+\end_inset
+
+, displays if there is a corresponding graph, and update the state to Complete.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+Application
+\end_layout
+
+\end_inset
+
+ keeps tracking the index of the current line in highlight and the current
+ image in display with 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+index_line
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+index_img
+\end_layout
+
+\end_inset
+
+ respectively.
+ The 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+next()
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+previous()
+\end_layout
+
+\end_inset
+
+ functions update the 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+index_line
+\end_layout
+
+\end_inset
+
+ and update the highlight.
+ They also update 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+index_img
+\end_layout
+
+\end_inset
+
+ if there is a graph associated with the line and change the image of display.
+\end_layout
+
+\begin_layout Standard
+After in-depth research and trials there does not seem to be a good way
+ to have line number labelling to the textbox and this featured was not
+ implemented.
+\end_layout
+
+\begin_layout Subsection
+Parse and Insert: Handler
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Parse-and-Insert:"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+Handler
+\end_layout
+
+\end_inset
+
+ manages the alteration to the source code by parsing and inserting statements
+ into the AST.
+ For this purpose all, code that is inserted has to be parsed.
+ The two main goal of 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+Handler
+\end_layout
+
+\end_inset
+
+ is to build a list for the order of execution and graph wherever needed.
+ Getting the order of execution can be achieved by using a list.
+ For every line from the source, add a line that append the source line
+ number into the list.To reflect the effect of a line, add a graphing statement
+ after the line.
+ 
+\end_layout
+
+\begin_layout Standard
+AST module has defined node classes to represent the grammar in Python.
+ AST is a tree of node classes where children of the node is a list of nodes.
+ Since the intension is to insert extra statements in the source code, nodes
+ with child statements are subject to alteration.
+ A Function Definition statement for example has a list that contains all
+ statements under its scope.
+ Some statements on the other hand have more than one list to separate its
+ child statements.
+ For instance, Try statement has one list for the statements under the try
+ body, one for the else body, and one for the final body.
+ Insertion has to be applied to all children recursively.
+\end_layout
+
+\begin_layout Standard
+One might easily assume that inserting the extra statements after every
+ statement will do the job.
+ However in AST, a statement node follows the Function Definition executed
+ after the entire function.
+ A statement node comes after a return node is never executed.
+ It turns out there are statements that do not benefit to have inserted
+ statements as a sibling node.
+ There are also statements that would be problematic if the line number
+ append statement comes after it.
+ Therefore, statement classes are labelled into four types.
+\end_layout
+
+\begin_layout Description
+Type1 Statements that have their local namespaces hence global variables
+ has to be declared before use.
+ The global variable declarations are inserted as their first child.
+ 
+\end_layout
+
+\begin_layout Description
+Type2 Statements that do not execute statements after the statement or mess
+ up the execution order record if inserted after.
+\end_layout
+
+\begin_layout Description
+Type3 Statements that require the line number append statement as their
+ first child instead of as their following sibling.
+\end_layout
+
+\begin_layout Description
+Type4 Any statement that is neither Type 2 nor Type 3.
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Location-of-Insertions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ explains the position relationship of each type of nodes with global declaratio
+ns, append statements, and graphing statement.
+ Note that a statement can be labelled with multiple types yet Type 4 is
+ mutually exclusive to the union of Type 2 and 3.
+ As an example function declaration is of Type 1 and 3.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features tabularvalignment="middle" tabularwidth="100text%">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Statement Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+First in children
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Before
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+After
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+global declarations
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+append
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+append, graphing
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+append
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+graphing
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Location-of-Insertions"
+
+\end_inset
+
+Location of Insertions for Different Types of Statement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If there is not any error from parsing the source code, the 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+Handler
+\end_layout
+
+\end_inset
+
+ first stepped through the source AST once to collect all the variable names
+ that is declared into a list called 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+vars
+\end_layout
+
+\end_inset
+
+.
+ This collection is essential because calling 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+exec()
+\end_layout
+
+\end_inset
+
+ to execute the AST is considered the same process.
+ Using 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+callsviz()
+\end_layout
+
+\end_inset
+
+, a call chart graphing function in Lolviz, without passing in the variable
+ list will lead to graphing all variables existing in visualizer including
+ those imported form packages.
+ 
+\end_layout
+
+\begin_layout Standard
+At the first level of the tree, the handler inserts the import statement
+ of the Lolviz package, initialises a global graph counter, and initialises
+ the global list 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+execution_squence
+\end_layout
+
+\end_inset
+
+ for execution order at the beginning of the list.
+ The graph counter is used for naming the files when Graphviz renders the
+ PNGs.
+\end_layout
+
+\begin_layout Standard
+While stepping through the AST, Global declaration statements, append statements
+, and graphing statements are inserted to the positions as presented in
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Location-of-Insertions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ The line number of a node can be accessed to build the line number append
+ statement.
+ The graphing statements are made up of three step: graph generation, set
+ the image formats, and rendering the graphs into images.
+ Graph are generated by passing 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+vars
+\end_layout
+
+\end_inset
+
+ into 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+callsviz()
+\end_layout
+
+\end_inset
+
+ to control which variables are included in the call graph.
+ The filenames of the images are numbered in chronological order by keeping
+ a 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+png_counter
+\end_layout
+
+\end_inset
+
+ updated and are kept in same length by filling 0s.
+\end_layout
+
+\begin_layout Standard
+After the 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+Handler
+\end_layout
+
+\end_inset
+
+ processes the following simple source code Algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Example-Source-Code"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the altered AST is unparsed to exhibit the effect of the alteration as
+ shown in Algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Example-Altered-Code"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ The final state of 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+execution_sequence
+\end_layout
+
+\end_inset
+
+ should be
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+[(1, 0), (4, 1), (1, 1), (2, 0)]
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "numbers=left,breaklines=true,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def foo():
+\end_layout
+
+\begin_layout Plain Layout
+
+    pass
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+foo()
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Example-Source-Code"
+
+\end_inset
+
+Example Source Code
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "numbers=left,breaklines=true,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+from lolviz import * 
+\end_layout
+
+\begin_layout Plain Layout
+
+import os 
+\end_layout
+
+\begin_layout Plain Layout
+
+global png_counter 
+\end_layout
+
+\begin_layout Plain Layout
+
+png_counter = 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+global execution_sequence 
+\end_layout
+
+\begin_layout Plain Layout
+
+execution_sequence = [] 
+\end_layout
+
+\begin_layout Plain Layout
+
+execution_sequence.append((1, 0))
+\end_layout
+
+\begin_layout Plain Layout
+
+def foo():
+\end_layout
+
+\begin_layout Plain Layout
+
+    global png_counter
+\end_layout
+
+\begin_layout Plain Layout
+
+    global execution_sequence     
+\end_layout
+
+\begin_layout Plain Layout
+
+    execution_sequence.append((1, 1))
+\end_layout
+
+\begin_layout Plain Layout
+
+    mySpecialGraph = callsviz(varnames=['foo'])
+\end_layout
+
+\begin_layout Plain Layout
+
+    mySpecialGraph.format = 'png'
+\end_layout
+
+\begin_layout Plain Layout
+
+    png_counter += 1
+\end_layout
+
+\begin_layout Plain Layout
+
+    mySpecialGraph.render(os.path.join(os.path.curdir, 'png', str(png_counter).zfill(4
+)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    execution_sequence.append((2, 0))
+\end_layout
+
+\begin_layout Plain Layout
+
+    pass
+\end_layout
+
+\begin_layout Plain Layout
+
+execution_sequence.append((4, 1))
+\end_layout
+
+\begin_layout Plain Layout
+
+foo()
+\end_layout
+
+\begin_layout Plain Layout
+
+mySpecialGraph = callsviz(varnames=['foo'])
+\end_layout
+
+\begin_layout Plain Layout
+
+mySpecialGraph.format = 'png' png_counter += 1
+\end_layout
+
+\begin_layout Plain Layout
+
+mySpecialGraph.render(os.path.join(os.path.curdir, 'png', str(png_counter).zfill(4)))
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Example-Altered-Code"
+
+\end_inset
+
+Example Altered Code
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Evaluation
+\end_layout
+
+\begin_layout Subsection
+Testing
+\end_layout
+
+\begin_layout Standard
+In the design stage, packages and dependencies has been tested thoroughly
+ to verify that they fit the purpose.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Tests-Performed-on"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that Lolviz has proven its ability on custom and arbitrary objects.
+ With little worry on the crossing arrows, the project settled on its call
+ graph generating feature since it has provided colour coordination with
+ different type of objects.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename test lolviz.png
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Tests-Performed-on"
+
+\end_inset
+
+Tests Performed on Lolviz 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Throughout the developing stage, the parse and graph mechanism was tested
+ countless times.
+ Other than basic statements such as Algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Example-Source-Code"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, data structures mentioned in the specification table in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Specification"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ were all implemented for testing purpose.
+ The parsing tests were done by both printing the altered AST, unparsed
+ version of the AST and the 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+execution_squence
+\end_layout
+
+\end_inset
+
+.
+ The doubly linked list is purposefully implemented wrong to prove the graph
+ illustrated in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Testing-Handler-on"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ can show the problem.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ddl.png
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Testing-Handler-on"
+
+\end_inset
+
+Testing Handler on Doubly Linked List that Fails to Remove a Node
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The mentioned data structured was all tests on the final product for GUI
+ testing.
+ Syntax error and runtime error examples was also tested to prove that error
+ massage is shown in the canvas.
+\end_layout
+
+\begin_layout Standard
+There is one unsolved issue that was founded during testing and it is be
+ described in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Issues"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Limitations 
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Limitation"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The visualiser can handle almost any arbitrary code with some trade-offs.
+ As reported in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Specification"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, there are limitations on the complexity of the source code for several
+ reasons.
+ Python limits the recursion depth of 1000.
+ The visualiser would not be able to handle AST of height exceeding 1000
+ since the insertion requires recursively stepping through the entire tree.
+ The source code is also limited to 9999 graphs generated.
+ PNG filenames will be read in correct order if the are all 0s filled to
+ the same length.
+ The decision made in this case is 4 digits.
+ Source code written by students rarely generates thousands of graphs.
+ Generate huge number of graphs can cause the visualiser to freeze for a
+ period of time.
+ However, the visualiser lacks of a mechanism to avoid lengthy input.
+\end_layout
+
+\begin_layout Standard
+The user should avoid using 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+if __name__ == "__main__"
+\end_layout
+
+\end_inset
+
+ because the alternated code is not being run as top-level environment of
+ the programme.
+ There are also limitations on the naming of variables and functions.
+ Although trying the best to avoid collisions with comprehensive names,
+ 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+png_counter
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+execution_sequence
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+mySpecialGraph
+\end_layout
+
+\end_inset
+
+, and functions names that present in the Lolviz package are reserved.
+ Naming variable 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+node
+\end_layout
+
+\end_inset
+
+ causes unexpected issues and should be avoided until it is solved (see
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Issues"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Standard output displayed in the command line that executed the application.
+\end_layout
+
+\begin_layout Standard
+Never ending algorithm will not exit the Executing state and therefore not
+ recommanded.
+\end_layout
+
+\begin_layout Standard
+It is not recommanded to be running from a folder that is access by synchronizat
+ion service, like Dropbox or OneDrive, to avoid files used by another process.
+\end_layout
+
+\begin_layout Subsection
+Issues
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Issues"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There is one issue that was discovered on variable naming.
+ Naming a variable 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+node
+\end_layout
+
+\end_inset
+
+ in the source input sometimes causes syntax error raised by Graphviz during
+ execution.
+ It appears to only happen when two conditions are both met.
+ One being that the source code has once parsed by AST and the other one
+ being that there was multiple declaration on 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+node
+\end_layout
+
+\end_inset
+
+ in different namespace.
+ Algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Example-Source-Code-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is one example that results in throwing an error.
+ The reason is remained unknown.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "numbers=left,breaklines=true,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Foo: 
+\end_layout
+
+\begin_layout Plain Layout
+
+   def __init__(self): 
+\end_layout
+
+\begin_layout Plain Layout
+
+       self.node = 1
+\end_layout
+
+\begin_layout Plain Layout
+
+node = Foo() 
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Example-Source-Code-1"
+
+\end_inset
+
+Example Source Code with Naming Issue
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Final Product
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename in use.PNG
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Python-Visualiser-in"
+
+\end_inset
+
+Python Visualiser in Use with Binary Search Tree
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The final work shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Python-Visualiser-in"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ has completed all must haves and should haves features listed in Section
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Features-and-Requirements"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ The visualiser was only intended to show the transformation of linked data
+ structures in execution.
+ It went from try to just display the most basic data structures to now
+ that it is capable of handling algorithms such as recursions, classes object-or
+iented programming, which is believed to be sufficient for educational uses.
+ 
+\end_layout
+
+\begin_layout Standard
+The UI design is quite clean and straight forward.
+ Students nowadays are tech-natives may already have experienced similar
+ application.
+ Users should be familiarized with it fairly soon since there are not many
+ options.
+ The elements in the graphs are very well placed as seen in the Binary Search
+ Tree example in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Python-Visualiser-in"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Though it is not the scope of this project, modernising the look of the
+ GUI would make it much more appealing.
+\end_layout
+
+\begin_layout Standard
+Standard output displayed in the command line that executed the application
+ becomes the shortcoming of the system.
+ It was short-sighted not planning this into the design.
+\end_layout
+
+\begin_layout Subsection
+Possibilities
+\end_layout
+
+\begin_layout Standard
+This is a vastly expendable project that can become a full-fledged practical
+ software.
+ There could be some basic text editor features, syntax highlights, 21
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+st
+\end_layout
+
+\end_inset
+
+ century aesthetic themes, and colours.
+ It is also nice to see that it execution steps displayed.
+ It would be splendid if it is packaged into an executable bundled with
+ all the dependencies, and keep all the image files in the temporary files
+ directory.
+ Ultimately it can be expended to do the same for code in other languages
+ on other operating systems.
+\end_layout
+
+\begin_layout Section
+Conclusions
+\end_layout
+
+\begin_layout Subsection
+Self Reflection
+\end_layout
+
+\begin_layout Standard
+I realised most time-consuming part of conducting a project is the preparation
+ and researches.
+ There are infinite libraries and frameworks available, but one cannot afford
+ to try all of them to determine what is the best option within the project
+ time frame.
+ For trying out each of the new technology it comes with a huge price of
+ spending hours to learn that it is not capable for my purpose.
+ Once all the components are tested and ready, it does not take much time
+ to piece them together.
+\end_layout
+
+\begin_layout Standard
+Prior to the project, I had no knowledge about GUI and AST.
+ This project has proven that I am capable to self-educate on new topics
+ and materials.
+ I have acquired the skill to build software using technologies that I am
+ not familiar with.
+\end_layout
+
+\begin_layout Standard
+I found myself struggle a lot with structuring long sentences that explains
+ complicated logics and relationships in technologies.
+ I believed myself am not a writer, but writing turns out to be very helpful
+ of ordering ones thought and found details and logics that I would not
+ otherwise have discovered.
+\end_layout
+
+\begin_layout Standard
+The project could be much better documented and commented.
+ There was no straight development methodology that was followed, but logs,
+ ideas and findings were jotted weekly.
+ I find thing these notes are quite important.
+ It saved me from having to warm up and get familiar with the progress I
+ have made every time.
+\end_layout
+
+\begin_layout Subsection
+Timeline
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Gantt Chart.png
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Gantt-Chart"
+
+\end_inset
+
+Gantt Chart
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There was no date precise documentation of what task has been achieved through
+ out the project.
+ The Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Gantt-Chart"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is roughly proportion to how the year was spent.
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintAll"
+bibfiles "Library"
+options "IEEEtran"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
