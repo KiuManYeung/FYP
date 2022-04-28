@@ -1,0 +1,15 @@
+Animation Environment for Linked Data Structure
+
+I believe data structure is quite a foreign idea to beginning programmers.  Visual learning is crucial to such abstract concepts.  Traditional debugging tools are not good at expressing complicated data structures and makes it quite difficult to find a bug.  It maybe easy to draw an instant of the data structure, but it would be hard to draw every single step with pen and papers.  Wouldn't it be great to be able to generate graphs from your own algorithm in seconds.
+
+So the project aims to create a software that would process Python code, generates and display graphs of every changes, and be able to show where the execution occurs. The plan is to have a textbox on the left for input, graphs on the right, and buttons to travel between steps.
+
+The software is roughly separated into three areas: GUI, code analysis and graph generations.  The GUI is the driver managing the input and output, the code analysis insert commands in the input source where it triggers graphing tools to do the heavy lifting.  I will generally go through the tools was used in creating this software.
+
+Graphviz is a popular visualization software to display structural information. It can render graphs into images. Lolviz on the other hand is a rapper over Graphviz, it takes an object and turns it into nicely looking graphs that Graphviz could render.
+
+AST is a module that can parse Python code into grammar trees.  The trees can than be walked through and be modified to achieve triggering of graphing mechanism in appropriate places.
+
+Now I will take you through the demo of the project to see how it functions.
+
+You can see the UI has changed a bit from the plan because of some added features.  On the left side I have prepared some code for demonstration.  This is a representation of BST and there are a few lines of BST manipulation at the bottom to demonstrate the ability of the visualizer.  After inserting your implementation, there is a button over here that triggers the visitation.  The status bar at the bottom will change from Executing to Complete when the graphs are ready. Click Next to walk through your code in execution sequence. Clicking previous will take you back to the last step.  The line of current execution is highlighted in grey.  The textbox is frozen until you hit edit. In case of syntax error or runtime error, instead of graphs, the error message is displayed.
